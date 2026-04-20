@@ -1,3 +1,6 @@
+Livewell website · HTML
+Copy
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   :root {
     --cream: #FAF7F2;
     --cream-dark: #F2EDE4;
@@ -25,16 +28,16 @@
     --font-body: 'DM Sans', sans-serif;
     --nav-h: 80px;
   }
-
+ 
   html { scroll-behavior: smooth; }
-
+ 
   body {
     font-family: var(--font-body);
     background: var(--cream);
     color: var(--charcoal);
     overflow-x: hidden;
   }
-
+ 
   /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -45,7 +48,7 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 5%;
   }
-
+ 
   .nav-logo {
     font-family: var(--font-display);
     font-size: 1.55rem;
@@ -55,7 +58,7 @@
     text-decoration: none;
     display: flex; align-items: center; gap: 10px;
   }
-
+ 
   .nav-logo .leaf {
     width: 28px; height: 28px;
     background: var(--sage);
@@ -64,11 +67,11 @@
     flex-shrink: 0;
     position: relative;
   }
-
+ 
   .nav-links {
     display: flex; gap: 2.5rem; list-style: none;
   }
-
+ 
   .nav-links a {
     text-decoration: none;
     color: var(--bark);
@@ -77,9 +80,9 @@
     letter-spacing: 0.04em;
     transition: color 0.2s;
   }
-
+ 
   .nav-links a:hover { color: var(--sage); }
-
+ 
   .nav-cta {
     background: var(--sage);
     color: white !important;
@@ -88,9 +91,9 @@
     font-weight: 500 !important;
     transition: background 0.2s !important;
   }
-
+ 
   .nav-cta:hover { background: var(--bark) !important; }
-
+ 
   /* ── HERO ── */
   #home {
     min-height: 100vh;
@@ -100,26 +103,26 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   .hero-left {
     display: flex; flex-direction: column; justify-content: center;
     padding: 8% 6% 8% 8%;
     position: relative; z-index: 2;
   }
-
+ 
   .hero-tag {
     display: inline-flex; align-items: center; gap: 8px;
     font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--sage); font-weight: 500;
     margin-bottom: 1.8rem;
   }
-
+ 
   .hero-tag::before {
     content: '';
     display: block; width: 32px; height: 1px;
     background: var(--sage);
   }
-
+ 
   .hero-h1 {
     font-family: var(--font-display);
     font-size: clamp(3rem, 5vw, 5.5rem);
@@ -129,12 +132,12 @@
     margin-bottom: 1.8rem;
     letter-spacing: -0.01em;
   }
-
+ 
   .hero-h1 em {
     font-style: italic;
     color: var(--sage);
   }
-
+ 
   .hero-sub {
     font-size: 1.05rem;
     line-height: 1.75;
@@ -143,11 +146,11 @@
     margin-bottom: 2.8rem;
     font-weight: 300;
   }
-
+ 
   .hero-actions {
     display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
   }
-
+ 
   .btn-primary {
     background: var(--sage);
     color: white;
@@ -160,12 +163,12 @@
     transition: all 0.25s;
     border: 2px solid var(--sage);
   }
-
+ 
   .btn-primary:hover {
     background: transparent;
     color: var(--sage);
   }
-
+ 
   .btn-secondary {
     color: var(--bark);
     text-decoration: none;
@@ -175,16 +178,16 @@
     transition: color 0.2s;
     padding: 0.9rem 0;
   }
-
+ 
   .btn-secondary:hover { color: var(--sage); }
   .btn-secondary::after { content: '→'; }
-
+ 
   .hero-stats {
     display: flex; gap: 2.5rem; margin-top: 3.5rem;
     padding-top: 2.5rem;
     border-top: 1px solid rgba(107,91,78,0.15);
   }
-
+ 
   .stat-num {
     font-family: var(--font-display);
     font-size: 2.4rem;
@@ -193,33 +196,33 @@
     line-height: 1;
     margin-bottom: 0.3rem;
   }
-
+ 
   .stat-label {
     font-size: 0.78rem;
     color: var(--bark-light);
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
-
+ 
   .hero-right {
     position: relative;
     overflow: hidden;
   }
-
+ 
   .hero-img-wrap {
     position: absolute; inset: 0;
     background: linear-gradient(135deg, #D4E6D5 0%, #B8CEBC 40%, #8FB49A 100%);
   }
-
+ 
   .hero-img-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(to right, var(--cream) 0%, transparent 15%);
   }
-
+ 
   .hero-card {
     position: absolute;
     bottom: 10%;
-    left: -40px;
+    left: 0;
     background: white;
     border-radius: 20px;
     padding: 1.4rem 1.8rem;
@@ -227,12 +230,12 @@
     max-width: 260px;
     animation: floatUp 3s ease-in-out infinite alternate;
   }
-
+ 
   @keyframes floatUp {
     from { transform: translateY(0); }
     to { transform: translateY(-10px); }
   }
-
+ 
   .hero-card-icon {
     width: 40px; height: 40px;
     background: var(--sage-pale);
@@ -241,7 +244,7 @@
     margin-bottom: 0.8rem;
     font-size: 1.2rem;
   }
-
+ 
   .hero-card h4 {
     font-family: var(--font-display);
     font-size: 1.2rem;
@@ -249,13 +252,13 @@
     color: var(--charcoal);
     margin-bottom: 0.3rem;
   }
-
+ 
   .hero-card p {
     font-size: 0.82rem;
     color: var(--bark-light);
     line-height: 1.5;
   }
-
+ 
   /* Organic blob shapes */
   .blob {
     position: absolute;
@@ -263,28 +266,28 @@
     opacity: 0.25;
     pointer-events: none;
   }
-
+ 
   /* ── SECTION SHARED ── */
   section { scroll-margin-top: var(--nav-h); }
-
+ 
   .section-wrap {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 5%;
   }
-
+ 
   .section-tag {
     display: inline-flex; align-items: center; gap: 8px;
     font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--sage); font-weight: 500;
     margin-bottom: 1.2rem;
   }
-
+ 
   .section-tag::before {
     content: ''; display: block;
     width: 28px; height: 1px; background: var(--sage);
   }
-
+ 
   .section-h2 {
     font-family: var(--font-display);
     font-size: clamp(2.2rem, 4vw, 3.6rem);
@@ -293,9 +296,9 @@
     color: var(--soft-black);
     margin-bottom: 1.2rem;
   }
-
+ 
   .section-h2 em { font-style: italic; color: var(--sage); }
-
+ 
   .section-lead {
     font-size: 1.05rem;
     line-height: 1.8;
@@ -303,7 +306,7 @@
     font-weight: 300;
     max-width: 560px;
   }
-
+ 
   /* ── RESEARCH BANNER ── */
   .research-banner {
     background: var(--sage);
@@ -312,7 +315,7 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   .research-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -321,7 +324,7 @@
     gap: 4rem;
     align-items: center;
   }
-
+ 
   .research-quote {
     font-family: var(--font-display);
     font-size: clamp(1.8rem, 3vw, 3rem);
@@ -330,32 +333,32 @@
     color: white;
     margin-bottom: 1.2rem;
   }
-
+ 
   .research-quote em {
     font-style: italic;
     color: var(--gold-pale);
   }
-
+ 
   .research-source {
     font-size: 0.82rem;
     color: rgba(255,255,255,0.7);
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
-
+ 
   .research-facts {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
-
+ 
   .fact-card {
     background: rgba(255,255,255,0.12);
     border-radius: 16px;
     padding: 1.4rem;
     border: 1px solid rgba(255,255,255,0.2);
   }
-
+ 
   .fact-num {
     font-family: var(--font-display);
     font-size: 2.5rem;
@@ -364,19 +367,19 @@
     line-height: 1;
     margin-bottom: 0.4rem;
   }
-
+ 
   .fact-text {
     font-size: 0.85rem;
     color: rgba(255,255,255,0.85);
     line-height: 1.5;
   }
-
+ 
   /* ── ABOUT ── */
   #about {
     padding: 8rem 0;
     background: var(--warm-white);
   }
-
+ 
   .about-inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -386,11 +389,11 @@
     gap: 6rem;
     align-items: center;
   }
-
+ 
   .about-visual {
     position: relative;
   }
-
+ 
   .about-img-main {
     width: 100%;
     aspect-ratio: 3/4;
@@ -399,7 +402,7 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   .about-img-accent {
     position: absolute;
     bottom: -30px;
@@ -413,7 +416,7 @@
     flex-direction: column;
     gap: 0.4rem;
   }
-
+ 
   .about-img-accent .big-num {
     font-family: var(--font-display);
     font-size: 3rem;
@@ -421,7 +424,7 @@
     color: var(--bark);
     line-height: 1;
   }
-
+ 
   .about-img-accent .big-label {
     font-size: 0.78rem;
     color: var(--bark-light);
@@ -431,7 +434,7 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
-
+ 
   .about-leaf-deco {
     position: absolute;
     top: -20px;
@@ -442,23 +445,23 @@
     transform: rotate(-45deg);
     border: 5px solid var(--warm-white);
   }
-
+ 
   .about-text { display: flex; flex-direction: column; gap: 1.5rem; }
-
+ 
   .about-values {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin-top: 1rem;
   }
-
+ 
   .value-item {
     background: var(--cream);
     border-radius: 16px;
     padding: 1.2rem;
     border-left: 3px solid var(--sage);
   }
-
+ 
   .value-item h4 {
     font-family: var(--font-display);
     font-size: 1.1rem;
@@ -466,19 +469,19 @@
     color: var(--charcoal);
     margin-bottom: 0.3rem;
   }
-
+ 
   .value-item p {
     font-size: 0.83rem;
     color: var(--bark-light);
     line-height: 1.55;
   }
-
+ 
   /* ── SERVICES ── */
   #services {
     padding: 8rem 0;
     background: var(--cream);
   }
-
+ 
   .services-header {
     max-width: 1200px;
     margin: 0 auto 4rem;
@@ -488,7 +491,7 @@
     gap: 4rem;
     align-items: end;
   }
-
+ 
   .services-grid {
     max-width: 1200px;
     margin: 0 auto;
@@ -497,7 +500,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
-
+ 
   .service-card {
     background: white;
     border-radius: 24px;
@@ -507,7 +510,7 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   .service-card::before {
     content: '';
     position: absolute;
@@ -518,10 +521,10 @@
     transform-origin: left;
     transition: transform 0.3s;
   }
-
+ 
   .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(44,40,36,0.1); }
   .service-card:hover::before { transform: scaleX(1); }
-
+ 
   .service-icon {
     width: 52px; height: 52px;
     background: var(--sage-pale);
@@ -530,7 +533,7 @@
     font-size: 1.5rem;
     margin-bottom: 1.2rem;
   }
-
+ 
   .service-card h3 {
     font-family: var(--font-display);
     font-size: 1.35rem;
@@ -538,14 +541,14 @@
     color: var(--charcoal);
     margin-bottom: 0.6rem;
   }
-
+ 
   .service-card p {
     font-size: 0.88rem;
     color: var(--bark-light);
     line-height: 1.65;
     margin-bottom: 1rem;
   }
-
+ 
   .service-tag {
     display: inline-block;
     background: var(--sage-pale);
@@ -557,12 +560,12 @@
     padding: 0.3rem 0.8rem;
     border-radius: 100px;
   }
-
+ 
   .service-tag.gold {
     background: var(--gold-pale);
     color: var(--bark);
   }
-
+ 
   /* ── HOW IT WORKS ── */
   #how-it-works {
     padding: 8rem 0;
@@ -570,20 +573,20 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   .how-header {
     max-width: 1200px; margin: 0 auto 5rem; padding: 0 5%;
     text-align: center;
   }
-
+ 
   .how-header .section-lead { margin: 0 auto; }
-
+ 
   .steps-wrap {
     max-width: 1200px; margin: 0 auto; padding: 0 5%;
     display: grid; grid-template-columns: repeat(4, 1fr);
     gap: 2rem; position: relative;
   }
-
+ 
   .steps-wrap::before {
     content: '';
     position: absolute;
@@ -591,12 +594,12 @@
     height: 2px;
     background: repeating-linear-gradient(to right, var(--sage-light) 0, var(--sage-light) 8px, transparent 8px, transparent 16px);
   }
-
+ 
   .step {
     text-align: center;
     position: relative;
   }
-
+ 
   .step-num {
     width: 104px; height: 104px;
     border-radius: 50%;
@@ -608,12 +611,12 @@
     z-index: 1;
     transition: all 0.3s;
   }
-
+ 
   .step:hover .step-num {
     background: var(--sage);
     border-color: var(--sage);
   }
-
+ 
   .step-inner-num {
     font-family: var(--font-display);
     font-size: 2rem;
@@ -621,9 +624,9 @@
     color: var(--sage);
     transition: color 0.3s;
   }
-
+ 
   .step:hover .step-inner-num { color: white; }
-
+ 
   .step h3 {
     font-family: var(--font-display);
     font-size: 1.3rem;
@@ -631,18 +634,18 @@
     color: var(--charcoal);
     margin-bottom: 0.6rem;
   }
-
+ 
   .step p {
     font-size: 0.88rem;
     color: var(--bark-light);
     line-height: 1.65;
   }
-
+ 
   .payer-badges {
     max-width: 1200px; margin: 4rem auto 0; padding: 0 5%;
     display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
   }
-
+ 
   .payer-badge {
     display: flex; align-items: center; gap: 10px;
     background: white; border-radius: 100px;
@@ -650,23 +653,23 @@
     border: 1px solid rgba(107,91,78,0.12);
     font-size: 0.85rem; color: var(--bark); font-weight: 400;
   }
-
+ 
   .payer-badge .dot {
     width: 8px; height: 8px; border-radius: 50%; background: var(--sage);
   }
-
+ 
   /* ── CONTACT ── */
   #contact {
     padding: 8rem 0;
     background: var(--warm-white);
   }
-
+ 
   .contact-inner {
     max-width: 1200px; margin: 0 auto; padding: 0 5%;
     display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
     align-items: start;
   }
-
+ 
   .contact-form-wrap {
     background: white;
     border-radius: 32px;
@@ -674,11 +677,11 @@
     border: 1px solid rgba(107,91,78,0.08);
     box-shadow: 0 8px 40px rgba(44,40,36,0.06);
   }
-
+ 
   .form-group {
     margin-bottom: 1.4rem;
   }
-
+ 
   .form-group label {
     display: block;
     font-size: 0.8rem;
@@ -688,7 +691,7 @@
     color: var(--bark);
     margin-bottom: 0.5rem;
   }
-
+ 
   .form-group input,
   .form-group select,
   .form-group textarea {
@@ -703,18 +706,18 @@
     outline: none;
     transition: border-color 0.2s;
   }
-
+ 
   .form-group input:focus,
   .form-group select:focus,
   .form-group textarea:focus {
     border-color: var(--sage);
     background: white;
   }
-
+ 
   .form-group textarea { height: 120px; resize: vertical; }
-
+ 
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
+ 
   .submit-btn {
     width: 100%;
     background: var(--sage);
@@ -729,15 +732,15 @@
     transition: background 0.2s;
     margin-top: 0.5rem;
   }
-
+ 
   .submit-btn:hover { background: var(--bark); }
-
+ 
   .contact-info { display: flex; flex-direction: column; gap: 2rem; }
-
+ 
   .contact-info-item {
     display: flex; gap: 1.2rem; align-items: flex-start;
   }
-
+ 
   .contact-icon {
     width: 48px; height: 48px; flex-shrink: 0;
     background: var(--sage-pale);
@@ -745,7 +748,7 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 1.2rem;
   }
-
+ 
   .contact-info-item h4 {
     font-family: var(--font-display);
     font-size: 1.1rem;
@@ -753,20 +756,20 @@
     color: var(--charcoal);
     margin-bottom: 0.3rem;
   }
-
+ 
   .contact-info-item p {
     font-size: 0.9rem;
     color: var(--bark-light);
     line-height: 1.6;
   }
-
+ 
   .service-areas {
     background: var(--sage-pale);
     border-radius: 20px;
     padding: 1.8rem;
     margin-top: 1rem;
   }
-
+ 
   .service-areas h4 {
     font-family: var(--font-display);
     font-size: 1.15rem;
@@ -774,11 +777,11 @@
     color: var(--charcoal);
     margin-bottom: 1rem;
   }
-
+ 
   .area-tags {
     display: flex; flex-wrap: wrap; gap: 0.6rem;
   }
-
+ 
   .area-tag {
     background: white;
     color: var(--sage);
@@ -788,7 +791,7 @@
     border-radius: 100px;
     border: 1px solid rgba(122,158,126,0.25);
   }
-
+ 
   /* ── FOOTER ── */
   footer {
     background: var(--soft-black);
@@ -800,50 +803,51 @@
     flex-wrap: wrap;
     gap: 1rem;
   }
-
+ 
   .footer-logo {
     font-family: var(--font-display);
     font-size: 1.3rem;
     color: white;
     font-weight: 400;
   }
-
+ 
   .footer-note {
     font-size: 0.8rem;
     line-height: 1.6;
     max-width: 400px;
     text-align: center;
   }
-
+ 
   .footer-links {
     display: flex; gap: 1.5rem; list-style: none;
   }
-
+ 
   .footer-links a {
     font-size: 0.82rem;
     color: rgba(255,255,255,0.5);
     text-decoration: none;
     transition: color 0.2s;
   }
-
+ 
   .footer-links a:hover { color: var(--sage-light); }
-
+ 
   /* ── ANIMATIONS ── */
   .fade-in {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
-
+ 
   .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
   }
-
+ 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     #home { grid-template-columns: 1fr; }
     .hero-right { display: none; }
+    .hero-card { display: none; }
     .hero-left { padding: 6% 5%; }
     .research-inner, .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
     .services-grid { grid-template-columns: 1fr 1fr; }
@@ -853,7 +857,7 @@
     .about-visual { display: none; }
     .nav-links { display: none; }
   }
-
+ 
   @media (max-width: 600px) {
     .services-grid { grid-template-columns: 1fr; }
     .steps-wrap { grid-template-columns: 1fr; }
@@ -863,7 +867,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <a href="#home" class="nav-logo">
@@ -878,7 +882,7 @@
     <li><a href="#contact" class="nav-cta">Get Started</a></li>
   </ul>
 </nav>
-
+ 
 <!-- HERO -->
 <section id="home">
   <div class="hero-left">
@@ -919,7 +923,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- RESEARCH BANNER -->
 <div class="research-banner">
   <div class="research-inner">
@@ -949,7 +953,7 @@
     </div>
   </div>
 </div>
-
+ 
 <!-- ABOUT -->
 <section id="about">
   <div class="about-inner">
@@ -991,7 +995,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- SERVICES -->
 <section id="services">
   <div class="services-header">
@@ -1044,7 +1048,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- HOW IT WORKS -->
 <section id="how-it-works">
   <div class="how-header fade-in">
@@ -1058,7 +1062,7 @@
     <div class="step fade-in">
       <div class="step-num"><span class="step-inner-num">1</span></div>
       <h3>Reach Out</h3>
-      <p>Contact us by phone or form. We'll have a warm, no-pressure conversation about your family's situation and needs.</p>
+      <p>Contact us by phone, form, or email. We'll have a warm, no-pressure conversation about your family's situation and needs.</p>
     </div>
     <div class="step fade-in">
       <div class="step-num"><span class="step-inner-num">2</span></div>
@@ -1083,7 +1087,7 @@
     <div class="payer-badge"><span class="dot"></span> VA Benefits</div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
@@ -1097,7 +1101,7 @@
         <div class="contact-icon">📞</div>
         <div>
           <h4>Phone</h4>
-          <p>(860) 000-0000<br>Mon – Fri, 9am – 5pm</p>
+          <p>(203) 292-0420</p>
         </div>
       </div>
       <div class="contact-info-item">
@@ -1119,46 +1123,55 @@
     </div>
     <div class="contact-form-wrap fade-in">
       <h3 style="font-family:var(--font-display); font-size:1.6rem; font-weight:500; color:var(--charcoal); margin-bottom:1.8rem;">Send Us a Message</h3>
-      <form onsubmit="handleSubmit(event)">
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="_subject" value="New Inquiry — Live Well Home Care">
+        <input type="hidden" name="_replyto" id="reply-email">
         <div class="form-row">
           <div class="form-group">
             <label>First Name</label>
-            <input type="text" placeholder="Jane" required>
+            <input type="text" name="first_name" placeholder="Jane" required>
           </div>
           <div class="form-group">
             <label>Last Name</label>
-            <input type="text" placeholder="Smith" required>
+            <input type="text" name="last_name" placeholder="Smith" required>
           </div>
         </div>
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" placeholder="(860) 000-0000">
+          <input type="tel" name="phone" placeholder="(203) 292-0420">
         </div>
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="you@email.com" required>
+          <input type="email" name="email" placeholder="you@email.com" required oninput="document.getElementById('reply-email').value=this.value">
         </div>
         <div class="form-group">
           <label>I'm inquiring about</label>
-          <select>
+          <select name="inquiry_type" required>
             <option value="">Select one...</option>
-            <option>Medicaid / AFL Program Eligibility</option>
-            <option>Private Pay Services</option>
-            <option>Long-Term Care Insurance</option>
-            <option>VA Benefits</option>
-            <option>General Information</option>
+            <optgroup label="Client Services">
+              <option>Medicaid / AFL Program Eligibility</option>
+              <option>Private Pay Services</option>
+              <option>Long-Term Care Insurance</option>
+              <option>VA Benefits</option>
+              <option>General Information</option>
+            </optgroup>
+            <optgroup label="Careers">
+              <option>Join Our Team — CNA Position</option>
+              <option>Join Our Team — HHA Position</option>
+              <option>Join Our Team — Caregiver / Other</option>
+            </optgroup>
           </select>
         </div>
         <div class="form-group">
           <label>Tell us about your situation</label>
-          <textarea placeholder="Share any details that would help us understand your family's needs..."></textarea>
+          <textarea name="message" placeholder="Share any details that would help us understand your needs..."></textarea>
         </div>
         <button type="submit" class="submit-btn">Send Message →</button>
       </form>
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Live Well Home Care LLC</div>
@@ -1169,7 +1182,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </footer>
-
+ 
 <script>
   // Scroll animations
   const observer = new IntersectionObserver((entries) => {
@@ -1182,31 +1195,52 @@
       }
     });
   }, { threshold: 0.12 });
-
+ 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
+ 
   // Stagger cards
   document.querySelectorAll('.service-card, .step, .fact-card').forEach((el, i) => {
     el.style.transitionDelay = `${i * 80}ms`;
   });
-
+ 
   // Form
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.submit-btn');
-    btn.textContent = '✓ Message Sent!';
-    btn.style.background = 'var(--bark)';
-    setTimeout(() => {
-      btn.textContent = 'Send Message →';
-      btn.style.background = '';
-      e.target.reset();
-    }, 3000);
+    const form = e.target;
+    const btn = form.querySelector('.submit-btn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        btn.textContent = '✓ Message Sent!';
+        btn.style.background = 'var(--bark)';
+        form.reset();
+        setTimeout(() => {
+          btn.textContent = 'Send Message →';
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        btn.textContent = 'Error — try emailing us directly';
+        btn.style.background = '#c0392b';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Error — try emailing us directly';
+      btn.style.background = '#c0392b';
+      btn.disabled = false;
+    }
   }
-
+ 
   // Smooth active nav
   const sections = document.querySelectorAll('section[id]');
   const links = document.querySelectorAll('.nav-links a');
-
+ 
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(s => {
