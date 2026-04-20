@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Well Home Care | Connecticut Home Care Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF7F2;
+    --cream-dark: #F2EDE4;
+    --sage: #7A9E7E;
+    --sage-light: #B8CEBC;
+    --sage-pale: #EBF1EC;
+    --warm-white: #FFFEF9;
+    --bark: #6B5B4E;
+    --bark-light: #9C8B7E;
+    --charcoal: #2C2824;
+    --soft-black: #1A1614;
+    --gold: #C9A96E;
+    --gold-pale: #F5EDD8;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --nav-h: 80px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: var(--nav-h);
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(107,91,78,0.12);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .nav-logo .leaf {
+    width: 28px; height: 28px;
+    background: var(--sage);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--bark);
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--sage); }
+
+  .nav-cta {
+    background: var(--sage);
+    color: white !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 100px;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--bark) !important; }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    padding-top: var(--nav-h);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8% 6% 8% 8%;
+    position: relative; z-index: 2;
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--sage); font-weight: 500;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block; width: 32px; height: 1px;
+    background: var(--sage);
+  }
+
+  .hero-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.08;
+    color: var(--soft-black);
+    margin-bottom: 1.8rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-h1 em {
+    font-style: italic;
+    color: var(--sage);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--bark);
+    max-width: 460px;
+    margin-bottom: 2.8rem;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--sage);
+    color: white;
+    padding: 0.9rem 2.2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: all 0.25s;
+    border: 2px solid var(--sage);
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--sage);
+  }
+
+  .btn-secondary {
+    color: var(--bark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    display: flex; align-items: center; gap: 6px;
+    transition: color 0.2s;
+    padding: 0.9rem 0;
+  }
+
+  .btn-secondary:hover { color: var(--sage); }
+  .btn-secondary::after { content: '→'; }
+
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(107,91,78,0.15);
+  }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--bark-light);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-img-wrap {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #D4E6D5 0%, #B8CEBC 40%, #8FB49A 100%);
+  }
+
+  .hero-img-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, var(--cream) 0%, transparent 15%);
+  }
+
+  .hero-card {
+    position: absolute;
+    bottom: 10%;
+    left: -40px;
+    background: white;
+    border-radius: 20px;
+    padding: 1.4rem 1.8rem;
+    box-shadow: 0 20px 60px rgba(44,40,36,0.12);
+    max-width: 260px;
+    animation: floatUp 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes floatUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+  }
+
+  .hero-card-icon {
+    width: 40px; height: 40px;
+    background: var(--sage-pale);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+  }
+
+  .hero-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-card p {
+    font-size: 0.82rem;
+    color: var(--bark-light);
+    line-height: 1.5;
+  }
+
+  /* Organic blob shapes */
+  .blob {
+    position: absolute;
+    border-radius: 60% 40% 70% 30% / 50% 60% 40% 60%;
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  /* ── SECTION SHARED ── */
+  section { scroll-margin-top: var(--nav-h); }
+
+  .section-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--sage); font-weight: 500;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-tag::before {
+    content: ''; display: block;
+    width: 28px; height: 1px; background: var(--sage);
+  }
+
+  .section-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--soft-black);
+    margin-bottom: 1.2rem;
+  }
+
+  .section-h2 em { font-style: italic; color: var(--sage); }
+
+  .section-lead {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--bark);
+    font-weight: 300;
+    max-width: 560px;
+  }
+
+  /* ── RESEARCH BANNER ── */
+  .research-banner {
+    background: var(--sage);
+    color: white;
+    padding: 5rem 5%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .research-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .research-quote {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    font-weight: 300;
+    line-height: 1.25;
+    color: white;
+    margin-bottom: 1.2rem;
+  }
+
+  .research-quote em {
+    font-style: italic;
+    color: var(--gold-pale);
+  }
+
+  .research-source {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .research-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .fact-card {
+    background: rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 1.4rem;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .fact-num {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--gold-pale);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .fact-text {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    padding: 8rem 0;
+    background: var(--warm-white);
+  }
+
+  .about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-img-main {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(160deg, var(--sage-pale) 0%, #C8DBC9 100%);
+    border-radius: 120px 24px 120px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-img-accent {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 55%;
+    aspect-ratio: 1;
+    background: var(--gold-pale);
+    border-radius: 24px;
+    border: 6px solid var(--warm-white);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .about-img-accent .big-num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--bark);
+    line-height: 1;
+  }
+
+  .about-img-accent .big-label {
+    font-size: 0.78rem;
+    color: var(--bark-light);
+    text-align: center;
+    padding: 0 1rem;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .about-leaf-deco {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 80px; height: 80px;
+    background: var(--sage-pale);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    border: 5px solid var(--warm-white);
+  }
+
+  .about-text { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .about-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .value-item {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 1.2rem;
+    border-left: 3px solid var(--sage);
+  }
+
+  .value-item h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+  }
+
+  .value-item p {
+    font-size: 0.83rem;
+    color: var(--bark-light);
+    line-height: 1.55;
+  }
+
+  /* ── SERVICES ── */
+  #services {
+    padding: 8rem 0;
+    background: var(--cream);
+  }
+
+  .services-header {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+  }
+
+  .services-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid rgba(107,91,78,0.08);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--sage);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(44,40,36,0.1); }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    width: 52px; height: 52px;
+    background: var(--sage-pale);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.6rem;
+  }
+
+  .service-card p {
+    font-size: 0.88rem;
+    color: var(--bark-light);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  .service-tag {
+    display: inline-block;
+    background: var(--sage-pale);
+    color: var(--sage);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+  }
+
+  .service-tag.gold {
+    background: var(--gold-pale);
+    color: var(--bark);
+  }
+
+  /* ── HOW IT WORKS ── */
+  #how-it-works {
+    padding: 8rem 0;
+    background: var(--cream-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .how-header {
+    max-width: 1200px; margin: 0 auto 5rem; padding: 0 5%;
+    text-align: center;
+  }
+
+  .how-header .section-lead { margin: 0 auto; }
+
+  .steps-wrap {
+    max-width: 1200px; margin: 0 auto; padding: 0 5%;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; position: relative;
+  }
+
+  .steps-wrap::before {
+    content: '';
+    position: absolute;
+    top: 52px; left: calc(5% + 52px); right: calc(5% + 52px);
+    height: 2px;
+    background: repeating-linear-gradient(to right, var(--sage-light) 0, var(--sage-light) 8px, transparent 8px, transparent 16px);
+  }
+
+  .step {
+    text-align: center;
+    position: relative;
+  }
+
+  .step-num {
+    width: 104px; height: 104px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--sage-light);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+  }
+
+  .step:hover .step-num {
+    background: var(--sage);
+    border-color: var(--sage);
+  }
+
+  .step-inner-num {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--sage);
+    transition: color 0.3s;
+  }
+
+  .step:hover .step-inner-num { color: white; }
+
+  .step h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.6rem;
+  }
+
+  .step p {
+    font-size: 0.88rem;
+    color: var(--bark-light);
+    line-height: 1.65;
+  }
+
+  .payer-badges {
+    max-width: 1200px; margin: 4rem auto 0; padding: 0 5%;
+    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+  }
+
+  .payer-badge {
+    display: flex; align-items: center; gap: 10px;
+    background: white; border-radius: 100px;
+    padding: 0.6rem 1.4rem;
+    border: 1px solid rgba(107,91,78,0.12);
+    font-size: 0.85rem; color: var(--bark); font-weight: 400;
+  }
+
+  .payer-badge .dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--sage);
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    padding: 8rem 0;
+    background: var(--warm-white);
+  }
+
+  .contact-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 5%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-form-wrap {
+    background: white;
+    border-radius: 32px;
+    padding: 3rem;
+    border: 1px solid rgba(107,91,78,0.08);
+    box-shadow: 0 8px 40px rgba(44,40,36,0.06);
+  }
+
+  .form-group {
+    margin-bottom: 1.4rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bark);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    border: 1.5px solid rgba(107,91,78,0.2);
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--sage);
+    background: white;
+  }
+
+  .form-group textarea { height: 120px; resize: vertical; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .submit-btn {
+    width: 100%;
+    background: var(--sage);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .submit-btn:hover { background: var(--bark); }
+
+  .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+
+  .contact-info-item {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 48px; height: 48px; flex-shrink: 0;
+    background: var(--sage-pale);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .contact-info-item h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-info-item p {
+    font-size: 0.9rem;
+    color: var(--bark-light);
+    line-height: 1.6;
+  }
+
+  .service-areas {
+    background: var(--sage-pale);
+    border-radius: 20px;
+    padding: 1.8rem;
+    margin-top: 1rem;
+  }
+
+  .service-areas h4 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+  }
+
+  .area-tags {
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+  }
+
+  .area-tag {
+    background: white;
+    color: var(--sage);
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    border: 1px solid rgba(122,158,126,0.25);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--soft-black);
+    color: rgba(255,255,255,0.6);
+    padding: 3rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 400;
+  }
+
+  .footer-note {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex; gap: 1.5rem; list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--sage-light); }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    #home { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 6% 5%; }
+    .research-inner, .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .steps-wrap { grid-template-columns: 1fr 1fr; }
+    .steps-wrap::before { display: none; }
+    .services-header { grid-template-columns: 1fr; gap: 1.5rem; }
+    .about-visual { display: none; }
+    .nav-links { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .steps-wrap { grid-template-columns: 1fr; }
+    .research-facts { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <span class="leaf"></span>
+    Live Well Home Care
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-left">
+    <span class="hero-tag">Connecticut Home Care Agency</span>
+    <h1 class="hero-h1">
+      Living well<br>
+      starts <em>at home.</em>
+    </h1>
+    <p class="hero-sub">
+      We support families across Connecticut by empowering the people who matter most — those who already love and live with your family member — to provide compassionate, dignified care right at home.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get Started Today</a>
+      <a href="#how-it-works" class="btn-secondary">See How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">90%</div>
+        <div class="stat-label">of seniors prefer<br>home over facility</div>
+      </div>
+      <div>
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years longer<br>living at home</div>
+      </div>
+      <div>
+        <div class="stat-num">4</div>
+        <div class="stat-label">Counties<br>we serve</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-wrap"></div>
+    <div class="hero-img-overlay"></div>
+    <div class="hero-card">
+      <div class="hero-card-icon">🌿</div>
+      <h4>Family-Centered Care</h4>
+      <p>Care provided by someone who already knows and loves your family member.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH BANNER -->
+<div class="research-banner">
+  <div class="research-inner">
+    <div>
+      <p class="research-quote">
+        "People who age <em>at home</em> live longer, healthier, and report significantly higher quality of life."
+      </p>
+      <p class="research-source">— National Aging in Place Council &amp; AARP Research</p>
+    </div>
+    <div class="research-facts">
+      <div class="fact-card">
+        <div class="fact-num">77%</div>
+        <div class="fact-text">of Americans 50+ want to stay in their homes as they age</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-num">30%</div>
+        <div class="fact-text">lower risk of depression for seniors receiving home care vs. facility care</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-num">$0</div>
+        <div class="fact-text">out-of-pocket cost for qualifying Medicaid AFL recipients</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-num">24/7</div>
+        <div class="fact-text">support from a caregiver who lives with and truly knows your loved one</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-visual fade-in">
+      <div class="about-img-main"></div>
+      <div class="about-img-accent">
+        <span class="big-num">CT</span>
+        <span class="big-label">Licensed &<br>State-Approved</span>
+      </div>
+      <div class="about-leaf-deco"></div>
+    </div>
+    <div class="about-text fade-in">
+      <span class="section-tag">About Us</span>
+      <h2 class="section-h2">Care that feels<br>like <em>family.</em></h2>
+      <p class="section-lead">
+        Live Well Home Care is a Connecticut-registered home care agency operating under the state's Adult Family Living (AFL) program. We believe the best care comes from those who already love you — and we're here to make that care official, supported, and sustainable.
+      </p>
+      <p style="font-size:1rem; line-height:1.75; color:var(--bark); font-weight:300;">
+        Our model is simple: we connect eligible clients with family members or loved ones who already live with them, provide training and agency support, and ensure the caregiver is fairly compensated through Medicaid or private pay — so families don't have to choose between love and livelihood.
+      </p>
+      <div class="about-values">
+        <div class="value-item">
+          <h4>Dignity First</h4>
+          <p>Every client deserves to age with grace, comfort, and independence.</p>
+        </div>
+        <div class="value-item">
+          <h4>Family Driven</h4>
+          <p>We believe the people who love you are best positioned to care for you.</p>
+        </div>
+        <div class="value-item">
+          <h4>Community Rooted</h4>
+          <p>Proudly serving families across Connecticut's counties.</p>
+        </div>
+        <div class="value-item">
+          <h4>Always Supported</h4>
+          <p>Caregivers are trained, compensated, and never left to navigate alone.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div class="fade-in">
+      <span class="section-tag">What We Offer</span>
+      <h2 class="section-h2">Services that<br>support <em>whole living.</em></h2>
+    </div>
+    <div class="fade-in">
+      <p class="section-lead">
+        Whether you qualify for Connecticut Medicaid's AFL program or prefer private pay, we offer a full range of non-medical home care services — all delivered by someone your family already trusts.
+      </p>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-in">
+      <div class="service-icon">🛁</div>
+      <h3>Personal Care</h3>
+      <p>Assistance with bathing, dressing, grooming, and personal hygiene — delivered with dignity and respect.</p>
+      <span class="service-tag">Medicaid & Private Pay</span>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">🤝</div>
+      <h3>Companionship</h3>
+      <p>Meaningful social engagement, activities, conversation, and emotional support to reduce isolation and uplift spirit.</p>
+      <span class="service-tag">Medicaid & Private Pay</span>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">🍽️</div>
+      <h3>Meal Preparation</h3>
+      <p>Nutritious, personalized meal planning and preparation, with attention to dietary needs and preferences.</p>
+      <span class="service-tag">Medicaid & Private Pay</span>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">🏠</div>
+      <h3>Light Housekeeping</h3>
+      <p>Laundry, tidying, organizing, and maintaining a safe, clean home environment for your loved one.</p>
+      <span class="service-tag">Medicaid & Private Pay</span>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">🚗</div>
+      <h3>Transportation & Errands</h3>
+      <p>Accompaniment to appointments, grocery shopping, and daily errands — keeping life moving freely.</p>
+      <span class="service-tag gold">Private Pay</span>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">💊</div>
+      <h3>Medication Reminders</h3>
+      <p>Gentle, consistent reminders to support medication schedules — keeping your loved one on track safely.</p>
+      <span class="service-tag">Medicaid & Private Pay</span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="how-header fade-in">
+    <span class="section-tag">The Process</span>
+    <h2 class="section-h2">Simple steps to <em>peace of mind.</em></h2>
+    <p class="section-lead">
+      Getting started with Live Well Home Care is straightforward. We guide your family every step of the way — from first call to first care day.
+    </p>
+  </div>
+  <div class="steps-wrap">
+    <div class="step fade-in">
+      <div class="step-num"><span class="step-inner-num">1</span></div>
+      <h3>Reach Out</h3>
+      <p>Contact us by phone or form. We'll have a warm, no-pressure conversation about your family's situation and needs.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num"><span class="step-inner-num">2</span></div>
+      <h3>Assessment</h3>
+      <p>We coordinate a care needs assessment to determine eligibility and the appropriate level of support (Medicaid or private pay).</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num"><span class="step-inner-num">3</span></div>
+      <h3>Caregiver Enrollment</h3>
+      <p>Your family's designated caregiver completes our training program and is officially enrolled — and compensated — through our agency.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num"><span class="step-inner-num">4</span></div>
+      <h3>Care Begins</h3>
+      <p>Services start, the caregiver is supported, and your loved one lives well — at home, where they belong.</p>
+    </div>
+  </div>
+  <div class="payer-badges fade-in">
+    <div class="payer-badge"><span class="dot"></span> Connecticut Medicaid (AFL Program)</div>
+    <div class="payer-badge"><span class="dot"></span> Private Pay</div>
+    <div class="payer-badge"><span class="dot"></span> Long-Term Care Insurance</div>
+    <div class="payer-badge"><span class="dot"></span> VA Benefits</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-info fade-in">
+      <span class="section-tag">Get Started</span>
+      <h2 class="section-h2">Let's talk about<br>your <em>family.</em></h2>
+      <p class="section-lead">
+        Whether you're ready to enroll or just have questions, we're here. Reach out and a member of our team will respond within one business day.
+      </p>
+      <div class="contact-info-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h4>Phone</h4>
+          <p>(860) 000-0000<br>Mon – Fri, 9am – 5pm</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <h4>Email</h4>
+          <p>inquiry@livewellhca.com</p>
+        </div>
+      </div>
+      <div class="service-areas">
+        <h4>Service Areas</h4>
+        <div class="area-tags">
+          <span class="area-tag">New Haven County</span>
+          <span class="area-tag">Fairfield County</span>
+          <span class="area-tag">Hartford County</span>
+          <span class="area-tag">Middlesex County</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-wrap fade-in">
+      <h3 style="font-family:var(--font-display); font-size:1.6rem; font-weight:500; color:var(--charcoal); margin-bottom:1.8rem;">Send Us a Message</h3>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Jane" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(860) 000-0000">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>I'm inquiring about</label>
+          <select>
+            <option value="">Select one...</option>
+            <option>Medicaid / AFL Program Eligibility</option>
+            <option>Private Pay Services</option>
+            <option>Long-Term Care Insurance</option>
+            <option>VA Benefits</option>
+            <option>General Information</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell us about your situation</label>
+          <textarea placeholder="Share any details that would help us understand your family's needs..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Live Well Home Care LLC</div>
+  <p class="footer-note">A Connecticut-licensed Homemaker-Companion Agency. Providing compassionate, family-centered home care across Connecticut.</p>
+  <ul class="footer-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Stagger cards
+  document.querySelectorAll('.service-card, .step, .fact-card').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 80}ms`;
+  });
+
+  // Form
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.submit-btn');
+    btn.textContent = '✓ Message Sent!';
+    btn.style.background = 'var(--bark)';
+    setTimeout(() => {
+      btn.textContent = 'Send Message →';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+
+  // Smooth active nav
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    links.forEach(l => {
+      l.style.color = l.getAttribute('href') === `#${current}` ? 'var(--sage)' : '';
+    });
+  });
+</script>
+</body>
+</html>
